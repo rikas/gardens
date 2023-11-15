@@ -1,0 +1,9 @@
+<h1>New plant</h1>
+
+<!-- POST /plants (plants_path) -->
+<!-- POST /gardens/:id/plants (garden_plants_path) -->
+<%= simple_form_for [@garden, @plant] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image_url %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

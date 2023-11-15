@@ -1,0 +1,19 @@
+
+<%= simple_form_for(@garden) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :banner_url %>
+    <%= f.input :name %>
+    <div>
+    <%= f.input :category, collection: Garden::CATEGORIES.map { |category| [category.capitalize, category] } %>
+    </div>
+  </div>
+
+  <div class="form-actions d-flex align-items-center gap-3">
+    <%= link_to 'Cancel', gardens_path %>
+    <span>or</span>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
