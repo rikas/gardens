@@ -1,19 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @garden.banner_url %>)">
   <%= @garden.name %>
 </div>
 
-      <div>
-      <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
+<div>
+  <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
+  <%= button_to "Destroy this garden", @garden, method: :delete %>
+</div>
 
-
-      <%= button_to "Destroy this garden", @garden, method: :delete %>
-    </div>
-
-<div class="row mt-4">
+<div class="row">
   <% @garden.plants.each do |plant| %>
-    <div class="col-2">
+    <div class="col-2 mt-4">
       <div class="card">
         <img src="<%= plant.image_url %>" class="card-img-top" alt="Plant image">
         <div class="card-body">
@@ -25,13 +21,15 @@
     </div>
   <% end %>
 
-  <div class="col-3">
-    <h5>Add new plant</h5>
+  <div class="col-3 mt-4">
+    <div class="white-card">
+      <h5 class="mb-3"><i class="fa fa-plus"></i> Add new plant</h5>
 
-    <%= simple_form_for [@garden, @plant] do |f| %>
-      <%= f.input :name, label: false, placeholder: 'Name' %>
-      <%= f.input :image_url, label: false, placeholder: 'Image URL' %>
-      <%= f.submit 'Add plant', class: 'btn btn-outline-primary' %>
-    <% end %>
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name, label: false, placeholder: 'Name' %>
+        <%= f.input :image_url, label: false, placeholder: 'Image URL' %>
+        <%= f.submit 'Add plant', class: 'btn btn-outline-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>

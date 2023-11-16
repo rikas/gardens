@@ -2,8 +2,8 @@
   <img src="<%= garden.banner_url %>" />
 
   <div class="card-product-infos">
-    <h2><%= garden.name %></h2>
-    <p>Category: <%= garden.category %></p>
+    <h4><%= link_to garden.name, garden_path(garden) %></h4>
+    <p>Category: <%= garden.category.name %></p>
     <p>
       <%= link_to garden_path(garden), class: 'btn btn-outline-primary btn-sm' do %>
         <i class="fa-solid fa-circle-info"></i> Details

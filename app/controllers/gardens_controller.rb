@@ -56,6 +56,6 @@ class GardensController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def garden_params
-    params.require(:garden).permit(:banner_url, :name, :category)
+    params.require(:garden).permit(:banner_url, :name, :category_id)
   end
 end

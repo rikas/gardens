@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@garden) do |f| %>
+<%= simple_form_for(garden) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -7,7 +6,7 @@
     <%= f.input :banner_url %>
     <%= f.input :name %>
     <div>
-    <%= f.input :category, collection: Garden::CATEGORIES.map { |category| [category.capitalize, category] } %>
+    <%= f.association :category %>
     </div>
   </div>
 
