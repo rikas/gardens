@@ -26,7 +26,7 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
     @plant.destroy
 
-    redirect_to ..
+    redirect_to garden_path(@plant.garden), notice: 'Plant destroyed!'
   end
 
   private

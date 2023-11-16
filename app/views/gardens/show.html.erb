@@ -4,6 +4,13 @@
   <%= @garden.name %>
 </div>
 
+      <div>
+      <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
+
+
+      <%= button_to "Destroy this garden", @garden, method: :delete %>
+    </div>
+
 <div class="row mt-4">
   <% @garden.plants.each do |plant| %>
     <div class="col-2">
@@ -17,19 +24,14 @@
       </div>
     </div>
   <% end %>
-</div>
 
-<%#= link_to 'Add a new plant', new_garden_plant_path(@garden), class: 'btn btn-outline-primary' %>
+  <div class="col-3">
+    <h5>Add new plant</h5>
 
-<%= simple_form_for [@garden, @plant] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image_url %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
-<div>
-  <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
-  <%= link_to "Back to gardens", gardens_path %>
-
-  <%= button_to "Destroy this garden", @garden, method: :delete %>
+    <%= simple_form_for [@garden, @plant] do |f| %>
+      <%= f.input :name, label: false, placeholder: 'Name' %>
+      <%= f.input :image_url, label: false, placeholder: 'Image URL' %>
+      <%= f.submit 'Add plant', class: 'btn btn-outline-primary' %>
+    <% end %>
+  </div>
 </div>

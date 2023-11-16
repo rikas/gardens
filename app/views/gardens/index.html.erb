@@ -1,11 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Gardens</h1>
 <h4 class="text-muted opacity-50 mb-3">The list of gardens you added</h4>
-
-<%= link_to new_garden_path, class: 'btn btn-outline-primary' do %>
-  <i class="fa fa-add"></i> New garden
-<% end %>
 
 <div id="gardens">
   <% @gardens.each do |garden| %>

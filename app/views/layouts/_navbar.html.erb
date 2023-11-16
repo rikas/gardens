@@ -1,0 +1,25 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto align-items-center">
+        <li class="nav-item active">
+          <%= link_to "All gardens", gardens_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to new_garden_path, class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-plus"></i> New garden
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
