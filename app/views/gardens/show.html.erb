@@ -2,9 +2,14 @@
   <%= @garden.name %>
 </div>
 
-<div>
-  <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
-  <%= button_to "Destroy this garden", @garden, method: :delete %>
+<div class="garden-actions d-flex py-3 gap-2">
+  <%= link_to edit_garden_path(@garden), class: 'btn btn-outline-primary btn-sm' do %>
+    <i class="fa fa-pencil"></i> Edit this garden
+  <% end %>
+
+  <%= button_to @garden, method: :delete, class: 'btn btn-outline-danger btn-sm' do %>
+    <i class="fa fa-trash"></i> Delete this garden
+  <% end %>
 </div>
 
 <div class="row">
